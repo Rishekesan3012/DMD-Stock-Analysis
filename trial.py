@@ -6,12 +6,12 @@ from sklearn.metrics import mean_absolute_error
 import pydmd
 
 def readSymbol(stock_exchange):
-    symbol = pd.read_csv(f"DATA/{stock_exchange}.csv")
+    symbol = pd.read_csv(f"{stock_exchange}.csv")
     symbol = symbol.iloc[:,0].tolist()
     if stock_exchange == "nse100_SYM":
-        matx = pd.read_csv("DATA/NSE100.csv",header=None)
+        matx = pd.read_csv("NSE100.csv",header=None)
     if stock_exchange == "nse50_sym":
-        matx = pd.read_csv("DATA/nse50.csv",header=None)
+        matx = pd.read_csv("nse50.csv",header=None)
 
     matx = pd.DataFrame(matx.transpose())
     matx = matx.fillna(0)
