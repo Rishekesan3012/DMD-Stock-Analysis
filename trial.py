@@ -132,7 +132,7 @@ def dmd_pred(j,i,stock_name):
     return ""
 
 
-st.title("Stock Price Prediction")
+st.title("DMD Stock Analysis")
 
 stock_exchange = ["nse50_sym", "nse100_SYM"]    
 index = st.selectbox("Select a Stock Exchange", stock_exchange)
