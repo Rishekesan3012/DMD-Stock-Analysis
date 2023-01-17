@@ -79,6 +79,7 @@ def dmd_analysis(result_comparison,j,top=3,i=12) :
         if dmd.amplitudes.real[d_ind] > 0 :
             st.write("Amplitude is positive")
         dmd_pred_plot(dmd, day_r-day0, d_ind, top)
+        reuturn ""
 
 def dmd_pred(j,i,stock_name):
     # creating the matrix mat 
@@ -103,7 +104,7 @@ def dmd_pred(j,i,stock_name):
     dmd = pydmd.DMD(svd_rank=mat.shape[1])
     dmd.fit(mat)
     dmd.dmd_time['tend'] = dmd.dmd_time['tend'] + 9
-    dmd.reconstructed_data.shape
+   
 
 
     # prediction
@@ -126,6 +127,7 @@ def dmd_pred(j,i,stock_name):
             'Error': [np.abs(day1[stock_ind]-pday1[stock_ind]), np.abs(day2[stock_ind]-pday2[stock_ind]), np.abs(day3[stock_ind]-pday3[stock_ind]), np.abs(day4[stock_ind]-pday4[stock_ind]), np.abs(day5[stock_ind]-pday5[stock_ind]), np.abs(day6[stock_ind]-pday6[stock_ind]), np.abs(day7[stock_ind]-pday7[stock_ind]), np.abs(day8[stock_ind]-pday8[stock_ind]), np.abs(day9[stock_ind]-pday9[stock_ind])]}
     df = pd.DataFrame(data)
     st.dataframe(df)
+    return ""
 
 
 
