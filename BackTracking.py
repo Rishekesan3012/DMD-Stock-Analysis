@@ -7,12 +7,12 @@ import streamlit as st
 
 st.set_option('deprecation.showPyplotGlobalUse', False)
 
-sym = pd.read_csv("nse50_sym.csv",header=None) 
+sym = pd.read_csv("DATA/nse50_sym.csv",header=None) 
 sym = sym[0].tolist()
 SYM =[ i + ".NS" for i in sym]
 
 df = pd.DataFrame()
-matx = pd.read_csv("nse50.csv",header=None) #VARIABLE 1
+matx = pd.read_csv("DATA/nse50.csv",header=None) #VARIABLE 1
 matx = pd.DataFrame(matx.transpose())
 matx = matx.fillna(0)
 
@@ -114,4 +114,3 @@ if st.button('Calculate'):
     # st.pyplot()
     st.line_chart(P[0])
     st.write("Note: Please make sure that the data files 'nse50_sym.csv' and    'nse50.csv' are in the 'DATA' folder.")
-
