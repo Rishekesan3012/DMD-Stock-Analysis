@@ -6,7 +6,7 @@ from sklearn.metrics import mean_absolute_error
 import pydmd
 
 def readSymbol(stock_exchange):
-    symbol = pd.read_csv(f"{stock_exchange}.csv")
+    symbol = pd.read_csv(f"{stock_exchange}.csv",header=None)
     symbol = symbol.iloc[:,0].tolist()
     if stock_exchange == "nse100_SYM":
         matx = pd.read_csv("NSE100.csv",header=None)
